@@ -14,16 +14,16 @@
 ## Структура проекта
 
 ```
-src/                    # Backend API (NestJS)
-├── modules/notifications/
-│   ├── domain/         # Доменные сущности
-│   ├── application/     # Use cases
-│   ├── infrastructure/ # Репозитории и внешние сервисы
-│   └── presentation/   # Controllers и DTOs
+server/                 # Backend API (NestJS)
+├── src/
+│   ├── modules/notifications/
+│   │   ├── domain/         # Доменные сущности
+│   │   ├── application/    # Use cases
+│   │   ├── infrastructure/ # Репозитории и внешние сервисы
+│   │   └── presentation/   # Controllers и DTOs
 worker/                 # Worker сервис
 frontend/               # React приложение
 docker-compose.yml      # Конфигурация всех сервисов
-Dockerfile             # Backend API контейнер
 ```
 
 ## Быстрый старт
@@ -91,6 +91,7 @@ GET /notifications
 ### Backend API
 
 ```bash
+cd server
 npm install
 npm run start:dev
 ```

@@ -13,7 +13,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}" ]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -23,17 +23,17 @@ services:
     container_name: vg_nats
     command: ["-js"]
     ports:
-      - "4222:4222"   # client
-      - "8222:8222"   # monitoring
+      - "4222:4222"
+      - "8222:8222"
     healthcheck:
-      test: ["CMD", "nats-server", "--version"]
-      interval: 10s
-      timeout: 3s
-      retries: 10
+        test: [ "CMD", "nats-server", "--version" ]
+        interval: 10s
+        timeout: 3s
+        retries: 10
 
   api:
     build:
-      context: .
+      context: ./server
       dockerfile: Dockerfile
     container_name: vg_api
     environment:
