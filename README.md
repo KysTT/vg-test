@@ -35,20 +35,25 @@ docker-compose.yml      # Конфигурация всех сервисов
 
 ### Запуск всех сервисов
 
+
+Клонируйте репозиторий
 ```bash
-# Клонируйте репозиторий
-git clone <repository-url>
+git clone https://github.com/KysTT/vg-test.git
+```
 
-# Создайте .env файл (опционально, есть значения по умолчанию)
-# DB_HOST=db
-# DB_PORT=5432
-# DB_USER=postgres
-# DB_PASSWORD=postgres
-# DB_NAME=notifications
-# NATS_URL=nats://nats:4222
-# PORT=3000
+Создайте .env файл (опционально, есть значения по умолчанию)
+```
+DB_HOST=db
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=notifications
+NATS_URL=nats://nats:4222
+PORT=3000
+```
 
-# Запустите все сервисы
+Запустите все сервисы
+```bash
 docker-compose up --build
 ```
 
